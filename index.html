@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+
+    <script>
+
+
+// 1- JSON
+
+let jsonObj = {
+    name: "Abdul Wahab",
+    age: 21,
+    email: "abdul@gmail.com",
+    courses: ["math", "science", "english"],
+    address:{
+        post: "khas Khasra",
+        city: "wazirabad",
+        district: "wazirabad",
+        country: "pakistan",
+    }
+}
+console.log(jsonObj);
+
+let jsonString = JSON.stringify(jsonObj);
+
+console.log(jsonString)
+
+jsonString = jsonString.replace("Abdul Wahab", "cheema");
+
+console.log(jsonString)
+
+let jsonParse = JSON.parse(jsonString)
+
+console.log(jsonParse)
+
+
+
+
+// 2- Regular Expression in JavaScript
+
+// Regular Expressions (Regex) ek powerful tool hain jo text ko patterns ke zariye match aur manipulate karne ke liye use hotay hain. JavaScript mein, aap regex ko strings ko match, search, aur replace karne ke liye use kar sakte hain.
+
+// Syntax
+// Regular expressions ko JavaScript mein /pattern/flags format mein likha jata hai:
+
+// pattern: Wo pattern jo aap match karna chahte hain.
+// flags: Optional parameters hain jo pattern matching ko modify karte hain (jaise g global search ke liye, i case-insensitive search ke liye).
+
+// (I) pattern matching
+let pattern = /Hell/;
+
+let result = pattern.test("hell world")
+console.log(result)
+
+// (II) Global aur Case-Insensitive Search
+
+let text = "hello world, hello again"
+
+let globalpattern = /hello w/;
+let matches = text.match(globalpattern);
+
+console.log(matches)
+
+
+// (III) replace text
+
+let text1 = "Hello world. Hello again.";
+let pattern1 = /hello/gi; 
+
+let newText = text1.replace(pattern1, "Hi");
+console.log(newText);  
+
+
+
+// Functional Programming ek programming paradigm hai jo functions ko first-class citizens ke tor par treat karta hai. JavaScript mein functional programming concepts ka use karke aap code ko zyada modular, reusable, aur maintainable bana sakte hain. Yahaan kuch key functional programming concepts hain aur unke examples:
+
+// 1. First-Class Functions
+// Concept: Functions ko first-class citizens ke tor par treat kiya jata hai, matlab functions ko variables ke tor par assign kiya ja sakta hai, arguments ke tor par pass kiya ja sakta hai, aur functions se return bhi kiya ja sakta hai.
+
+// Example:
+
+// javascript
+// Copy code
+// Function ko variable mein store karna
+const greet = function(name) {
+    return `Hello, ${name}!`;
+};
+
+// Function ko dusre function mein pass karna
+function processGreeting(greetingFunction, name) {
+    return greetingFunction(name);
+}
+
+console.log(processGreeting(greet, "Ali"));  // Outputs: Hello, Ali!
+
+// 2. Pure Functions
+// Concept: Pure functions woh functions hote hain jo same inputs ke liye hamesha same output dete hain aur koi side effects nahi rakhte.
+
+// Example:
+
+// javascript
+// Copy code
+// Pure function example
+function add(a, b) {
+    return a + b;
+}
+
+console.log(add(5, 10));  // Outputs: 15
+
+// 3. Immutability
+// Concept: Immutability ka matlab hai ke data ko modify nahi kiya jata. Instead, aap naye data structures create karte hain.
+
+// Example:
+
+// javascript
+// Copy code
+// Original array
+const numbers = [1, 2, 3];
+
+// New array create karna without modifying the original array
+const newNumbers = numbers.concat(4);
+
+console.log(numbers);     // Outputs: [1, 2, 3]
+console.log(newNumbers); // Outputs: [1, 2, 3, 4]
+
+// 4. Higher-Order Functions
+// Concept: Higher-order functions woh functions hote hain jo ek ya zyada functions ko arguments ke tor par lete hain ya ek function ko return karte hain.
+
+// Example:
+
+// javascript
+// Copy code
+// Higher-order function example
+function createMultiplier(multiplier) {
+    return function(value) {
+        return value * multiplier;
+    };
+}
+
+const double = createMultiplier(2);
+console.log(double(5));  // Outputs: 10
+
+
+    </script>
+</body>
+</html>
